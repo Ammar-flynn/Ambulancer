@@ -1,0 +1,77 @@
+/* ================= GENERAL ================= */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-background-color: #e8e8e8;
+}
+
+/* ================= TOP BAR ================= */
+HBox {
+    -fx-background-color: #ffffff; /* Dodger blue */
+    -fx-padding: 15;
+}
+
+HBox Label {
+    -fx-text-fill: #ff0000;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+Button {
+    -fx-background-radius: 8;
+    -fx-background-color: #ff4d4d; /* Red buttons */
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 6 12;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 2,0,0,1);
+    -fx-transition: all 0.2s ease;
+}
+
+Button:hover {
+    -fx-background-color: #ff1a1a; /* Brighter red */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* ================= CARDS ================= */
+.flow-pane .vbox {
+    -fx-background-color: #1e90ff; /* Dodger blue card */
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5,0,0,2);
+    -fx-cursor: hand;
+    -fx-transition: all 0.25s ease;
+}
+
+.flow-pane .vbox:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.flow-pane .vbox Label {
+    -fx-text-fill: #fff;
+}
+
+/* ================= SIDEBAR ================= */
+VBox {
+    -fx-background-color: #d32f2f;
+    -fx-padding: 15;
+    -fx-background-radius: 10;
+}
+
+ListView {
+    -fx-background-color: #fff;
+    -fx-background-radius: 10;
+}
+
+Separator {
+    -fx-background-color: #d32f2f;
+}
+.Cardarea{
+    -fx-background-color: black;
+}
+
+.recentA{
+    -fx-background-color: #c1c1c1;
+}
