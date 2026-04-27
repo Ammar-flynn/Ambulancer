@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Basic Colors -->
+    <!-- Add to res/values/colors.xml -->
+    <color name="emergency_card_background">#006BBDFF</color>
+    <color name="symptoms_yellow">#CF9A00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="notification_red">#D32F2F</color>
+    <color name="light_blue">#10e3e3</color>
+    <color name="primary_blue">#2196F3</color>
+    <color name="green_light">#E8F5E9</color>
+    <color name="search_border">#E0E0E0</color>
+    <color name="background_light">#FFFFFF</color>
+    <color name="background_lighter">#F5F5F5</color>
+    <color name="very_light_red">#FFEBEE</color>
+
+    <!-- Theme Colors -->
+    <color name="emergency_red">#E74C3C</color>
+
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+    <color name="light_gray">#F0F0F0</color>
+    <color name="dark_gray">#404040</color>
+    <color name="gray_light">#CCCCCC</color>
+    <!-- Add to res/values/colors.xml -->
+    <color name="assigned_card_background">#E6F2FF</color>
+    <color name="assigned_card_title">#1A3C6E</color>
+    <color name="icon_background_blue">#1E90FF</color>
+    <!-- Theme Colors -->
+    <color name="primary_color">#006BBDFF</color>
+    <color name="primary_dark">#1a3c6e</color>
+    <color name="secondary_color">#2ecc71</color>
+    <color name="hospital_red">#D32F2F</color>
+    <color name="hospital_dark_red">#B71C1C</color>
+    <color name="hospital_red_light">#FFEBEE</color>
+    <color name="hospital_red_very_light">#FFCDD2</color>
+    <color name="hospital_gray">#757575</color>
+    <color name="light_gray_background">#FAFAFA</color>
+
+
+
+
+
+
+    <!-- Background Colors -->
+    <color name="background_gray">#F8F9FA</color>
+    <color name="light_background">#F5F5F5</color>
+    
+    <!-- Card Colors -->
+    <color name="assigned_card_blue">#006BBDFF</color>
+    
+    <!-- Emergency Type Colors -->
+    <color name="accident_red">#8B0000</color>  <!-- darkred -->
+    <color name="symptoms_orange">#DAA520</color>  <!-- goldenrod -->
+    <color name="fire_blue">#1E90FF</color>  <!-- dodgerblue -->
+    
+    <!-- Status Colors -->
+    <color name="green">#2ECC71</color>
+    <color name="red">#E74C3C</color>
+    <color name="orange">#F39C12</color>
+    <color name="blue">#3498DB</color>
+
+    <!-- Text Colors -->
+    <color name="light_text">#E2E8F0</color>
+    <color name="dark_status_bar">#1E293B</color>  <!-- rgba(30, 41, 59, 0.95) -->
+    
+    <!-- Button Colors -->
+    <color name="button_primary">#006BBDFF</color>
+    <color name="button_secondary">#FFFFFF</color>
+    <color name="button_dark_bg">#1E1E1E</color>
+</resources>

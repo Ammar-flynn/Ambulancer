@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Top Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="70dp"
+        android:background="@color/hospital_red"
+        android:padding="16dp"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.12" />
+
+        <!-- Ambulancer Icon -->
+        <ImageView
+            android:id="@+id/icon_ambulancer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="Hospital"
+            android:src="@drawable/ambulancer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/back_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.1" />
+
+        <!-- Page Title -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Emergency Report"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_ambulancer"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Main Content ScrollView -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray_background"
+            android:padding="16dp">
+
+            <!-- Emergency Form Card -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/emergency_form_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:elevation="4dp"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Hospital Logo -->
+                <LinearLayout
+                    android:id="@+id/logo_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ambulancer" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="EMERGENCY SERVICES"
+                        android:textColor="@color/hospital_red"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Patient Name Label -->
+                <TextView
+                    android:id="@+id/name_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="PATIENT NAME"
+                    android:textColor="@color/hospital_red"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logo_container" />
+
+                <!-- Name Field -->
+                <EditText
+                    android:id="@+id/name_field"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Enter patient name"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name_label" />
+
+                <!-- Address Label -->
+                <TextView
+                    android:id="@+id/address_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="LOCATION / ADDRESS"
+                    android:textColor="@color/hospital_red"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name_field" />
+
+                <!-- Address Field -->
+                <EditText
+                    android:id="@+id/address_field"
+                    android:layout_width="0dp"
+                    android:layout_height="77dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/edittext_background"
+                    android:gravity="top"
+                    android:hint="Enter emergency location"
+                    android:inputType="textMultiLine"
+                    android:padding="15dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/dark_gray"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_label" />
+
+                <!-- Emergency Type Label -->
+                <TextView
+                    android:id="@+id/emergency_type_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="SELECT EMERGENCY TYPE"
+                    android:textColor="@color/hospital_red"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_field" />
+
+                <!-- Emergency Buttons Container -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/emergency_buttons_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/emergency_type_label">
+
+                    <!-- Accident Button -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/accident_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toStartOf="@id/symptoms_container"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.3">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/accident_button"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:cardBackgroundColor="@color/accident_red"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="4dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent="0.9">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Accident Emergency"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/accident_image" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="ACCIDENT"
+                            android:textColor="@color/hospital_dark_red"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/accident_button" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Symptoms Button -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/symptoms_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toStartOf="@id/fire_container"
+                        app:layout_constraintStart_toEndOf="@id/accident_container"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.3">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/symptoms_button"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:cardBackgroundColor="@color/symptoms_orange"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="4dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent="0.9">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Medical Symptoms"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/symptoms_image" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="MEDICAL"
+                            android:textColor="@color/hospital_dark_red"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/symptoms_button" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Fire/Mentalness Button -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/fire_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/symptoms_container"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.3">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/fahad_button"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:cardBackgroundColor="@color/fire_blue"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="4dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent="0.9">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="Fire Emergency"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/fire_image" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="MENTALNESS"
+                            android:textColor="@color/hospital_dark_red"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/fahad_button" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Instructions Card -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/instructions_card"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:background="@color/hospital_red_light"
+                    android:elevation="4dp"
+                    android:padding="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/emergency_buttons_container">
+
+                    <TextView
+                        android:id="@+id/instructions_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="🚨 EMERGENCY INSTRUCTIONS:"
+                        android:textColor="@color/hospital_dark_red"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/instruction1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="• Fill in patient details accurately"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/instructions_title" />
+
+                    <TextView
+                        android:id="@+id/instruction2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="• Select appropriate emergency type"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/instruction1" />
+
+                    <TextView
+                        android:id="@+id/instruction3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="• You will receive tracking ID"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/instruction2" />
+
+                    <TextView
+                        android:id="@+id/instruction4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="• Monitor status updates below"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/instruction3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Status Updates Card -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/status_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/card_background"
+                android:elevation="6dp"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/emergency_form_card">
+
+                <!-- Cards Header -->
+                <LinearLayout
+                    android:id="@+id/cards_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:maxWidth="35dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ambulancer" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="EMERGENCY STATUS TRACKER"
+                            android:textColor="@color/hospital_red"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Live updates every 5 seconds"
+                            android:textColor="@color/hospital_gray"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Cards Container -->
+                <FrameLayout
+                    android:id="@+id/cards_container"
+                    android:layout_width="0dp"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cards_header">
+
+                    <!-- Placeholder -->
+                    <LinearLayout
+                        android:id="@+id/placeholder_box"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/hospital_red_very_light"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:maxWidth="80dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_waiting"
+                            app:tint="@color/hospital_red" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:text="Awaiting Emergency Status"
+                            android:textColor="@color/hospital_dark_red"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Your emergency status will appear here"
+                            android:textColor="@color/hospital_gray"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <!-- RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/assigned_cards_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/overlay_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+
+        <!-- Dark Overlay -->
+        <View
+            android:id="@+id/dark_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"/>
+
+        <!-- Popup Form -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/form_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="25dp">
+
+                <!-- Close Button -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp">
+
+                    <Button
+                        android:id="@+id/close_form_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@android:color/transparent"
+                        android:text="X"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/hospital_red"/>
+
+                </RelativeLayout>
+
+                <!-- Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Your Symptoms"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/hospital_red"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Symptoms Field -->
+                <EditText
+                    android:id="@+id/symptoms_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:hint="Describe your symptoms..."
+                    android:background="@drawable/edittext_background"
+                    android:padding="15dp"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:layout_marginBottom="20dp"/>
+
+                <!-- Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/send_symptoms_button"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:text="Submit"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/button_primary"
+                        android:textColor="@color/white"
+                        android:layout_marginEnd="10dp"/>
+
+                    <Button
+                        android:id="@+id/cancel_button"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:text="Cancel"
+                        android:textSize="14sp"
+                        android:background="@drawable/button_secondary"
+                        android:textColor="@color/hospital_red"
+                        android:layout_marginStart="10dp"/>
+
+                </LinearLayout>
+
+                <!-- Footer -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please be as detailed as possible"
+                    android:textSize="12sp"
+                    android:textColor="@color/hospital_gray"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
